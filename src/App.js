@@ -8,7 +8,7 @@ import Layout from "./components/Layout/Layout";
 import Carrito from "./components/Carrito"
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Routes>
         {/* Landing sin Layout */}
         <Route path="/" element={<Landing />} />
