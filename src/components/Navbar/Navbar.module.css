@@ -1,0 +1,45 @@
+.navbar {
+  background: #fff;
+  padding: 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+.brand {
+  font-weight: bold;
+}
+
+.toggle {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+}
+
+.menu {
+  display: none;
+  list-style: none;
+  padding: 0;
+}
+
+.menu li {
+  margin: 0.5rem 0;
+}
+
+.open {
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .toggle {
+    display: none;
+  }
+
+  .menu {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+
+  .menu li {
+    margin: 0;
+  }
+}

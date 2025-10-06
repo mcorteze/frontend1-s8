@@ -1,0 +1,139 @@
+:root {
+  --color-primary: #768bc3;
+  --color-accent: #FF5722;
+
+  --color-scale-0: #ffffff;
+  --color-scale-1: #e9edf6;
+  --color-scale-2: #d4dbed;
+  --color-scale-3: #bec9e4;
+  --color-scale-4: #a9b7da;
+  --color-scale-5: #94a5d1;
+  --color-scale-6: #7e93c8;
+  --color-scale-7: #6777a2;
+  --color-scale-8: #4f5b7b;
+  --color-scale-9: #373e55;
+  --color-scale-10: #1f222e;
+
+  --color-text-primary: #212121;
+  --color-text-secondary: #757575;
+  --color-divider: #BDBDBD;
+
+  --elevation-1: 0 6px 16px rgba(0,0,0,.08), 0 2px 8px rgba(0,0,0,.06);
+  --elevation-2: 0 12px 28px rgba(0,0,0,.10), 0 6px 12px rgba(0,0,0,.08);
+}
+
+/* ===== Main container ===== */
+.main {
+  padding: 3rem 0;
+}
+
+/* ===== Secciones ===== */
+section + section {
+  margin-top: 3.25rem;
+}
+
+/* ===== Títulos ===== */
+.section-title {
+  font-size: clamp(1.25rem, 2.2vw, 1.6rem);
+  letter-spacing: 0.3px;
+  color: var(--color-scale-9);
+  margin-bottom: 0.9rem;
+  position: relative;
+}
+.section-title::after {
+  content: "";
+  display: block;
+  width: 64px;
+  height: 3px;
+  margin-top: .5rem;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--color-accent), rgba(255,87,34,.35));
+}
+
+/* ===== Layout especial para la sección "¿Qué es?" ===== */
+.sectionIntro {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+@media (min-width: 992px) {
+  .sectionIntro {
+    flex-direction: row;       /* lado a lado */
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.sectionIntroText {
+  flex: 1;
+  max-width: 520px;
+}
+
+.videoWrapper {
+  flex: 1;
+  max-width: 480px;           /* limita ancho del video en desktop */
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 1px solid var(--color-scale-2);
+  box-shadow: var(--elevation-2);
+  background: var(--color-scale-0);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.videoWrapper iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* ===== Cards grid ===== */
+.cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+@media (min-width: 768px) {
+  .cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ===== Card base ===== */
+.card {
+  background: var(--color-scale-6);
+  border: 1px solid rgba(255,255,255,.06);
+  border-radius: 0;
+  color: var(--color-scale-1);
+  box-shadow: var(--elevation-1);
+  padding: 1.25rem;
+  transition: box-shadow .18s ease, border-color .18s ease;
+}
+.card:hover {
+  box-shadow: var(--elevation-2);
+  border-color: rgba(255,255,255,.12);
+}
+.card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  margin-bottom: .75rem;
+  border-radius: 4px;
+}
+.card h5,
+.card h6 {
+  color: var(--color-scale-0);
+  margin-bottom: .5rem;
+}
+.card p {
+  color: #eee;
+  font-size: .9rem;
+}
+
+/* ===== Textos ===== */
+.text-description {
+  color: var(--color-text-secondary);
+  font-size: .95rem;
+}

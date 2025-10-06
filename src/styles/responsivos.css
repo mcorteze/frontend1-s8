@@ -1,0 +1,26 @@
+/* src/styles/responsivos.css */
+
+/* Base: móvil */
+body {
+  font-size: 16px;
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+  body {
+    font-size: 17px;
+  }
+  .grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  body {
+    font-size: 18px;
+  }
+  .grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
